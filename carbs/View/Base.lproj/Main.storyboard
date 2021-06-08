@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -250,29 +250,50 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tiD-be-M0e">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mHu-uI-aFl">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mHu-uI-aFl">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="111"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваша цель:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwJ-KF-B75">
-                                                <rect key="frame" x="144" y="0.0" width="126" height="40.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваша цель:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwJ-KF-B75">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="p9t-xn-4vu">
-                                                <rect key="frame" x="42.5" y="70.5" width="329" height="41.5"/>
-                                                <segments>
-                                                    <segment title="Похудение"/>
-                                                    <segment title="Поддержание"/>
-                                                    <segment title="Набор"/>
-                                                </segments>
-                                                <connections>
-                                                    <action selector="actionTargetSegmnted:" destination="PWw-QD-I2P" eventType="valueChanged" id="VVw-yT-rqe"/>
-                                                </connections>
-                                            </segmentedControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2l-iU-1cX">
+                                                <rect key="frame" x="0.0" y="55.5" width="414" height="55.5"/>
+                                                <subviews>
+                                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="p9t-xn-4vu">
+                                                        <rect key="frame" x="42.5" y="12.5" width="329" height="32"/>
+                                                        <segments>
+                                                            <segment title="Похудение"/>
+                                                            <segment title="Поддержание"/>
+                                                            <segment title="Набор"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="actionTargetSegmnted:" destination="PWw-QD-I2P" eventType="valueChanged" id="VVw-yT-rqe"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поддержание" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jd-8K-dEc">
+                                                        <rect key="frame" x="152.5" y="14" width="109" height="28"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="6Jd-8K-dEc" firstAttribute="width" secondItem="p9t-xn-4vu" secondAttribute="width" multiplier="0.33" id="IaN-cu-gcQ"/>
+                                                    <constraint firstItem="6Jd-8K-dEc" firstAttribute="height" secondItem="p9t-xn-4vu" secondAttribute="height" multiplier="0.9" id="Nja-9y-gG3"/>
+                                                    <constraint firstItem="6Jd-8K-dEc" firstAttribute="centerX" secondItem="V2l-iU-1cX" secondAttribute="centerX" id="UpG-1C-cxt"/>
+                                                    <constraint firstItem="6Jd-8K-dEc" firstAttribute="centerY" secondItem="V2l-iU-1cX" secondAttribute="centerY" id="cbL-Z5-ZFo"/>
+                                                    <constraint firstItem="p9t-xn-4vu" firstAttribute="centerY" secondItem="V2l-iU-1cX" secondAttribute="centerY" id="cvl-rh-OgY"/>
+                                                    <constraint firstItem="p9t-xn-4vu" firstAttribute="centerX" secondItem="V2l-iU-1cX" secondAttribute="centerX" id="eLD-kL-i1Z"/>
+                                                    <constraint firstItem="p9t-xn-4vu" firstAttribute="centerX" secondItem="V2l-iU-1cX" secondAttribute="centerX" id="j5g-F7-UBu"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="kwJ-KF-B75" firstAttribute="height" secondItem="p9t-xn-4vu" secondAttribute="height" id="uXm-wt-fEC"/>
+                                            <constraint firstItem="kwJ-KF-B75" firstAttribute="height" secondItem="V2l-iU-1cX" secondAttribute="height" id="1aX-U6-763"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NWP-52-bgq">
@@ -303,6 +324,20 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaR-nr-wsL">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="75.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnR-lq-l9e">
+                                                                <rect key="frame" x="146" y="19.5" width="122" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <state key="normal" title="Buy premium!"/>
+                                                                <connections>
+                                                                    <action selector="pressedBuy:" destination="PWw-QD-I2P" eventType="touchUpInside" id="qGe-ZO-Ss2"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="bnR-lq-l9e" firstAttribute="centerY" secondItem="BaR-nr-wsL" secondAttribute="centerY" id="C0l-bs-u4d"/>
+                                                            <constraint firstItem="bnR-lq-l9e" firstAttribute="centerX" secondItem="BaR-nr-wsL" secondAttribute="centerX" id="YBm-yn-aCh"/>
+                                                        </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hze-5k-qQV">
                                                         <rect key="frame" x="0.0" y="75.5" width="414" height="60.5"/>
@@ -367,6 +402,7 @@
                     <navigationItem key="navigationItem" id="DVh-sn-cHy"/>
                     <connections>
                         <outlet property="backgroundGender" destination="Cry-Bd-gak" id="jLM-Mp-TeF"/>
+                        <outlet property="maintainingLabel" destination="6Jd-8K-dEc" id="EmB-Cl-zla"/>
                         <outlet property="resultLabel" destination="W3u-32-TUe" id="4xi-vW-aXe"/>
                         <outlet property="targetLabel" destination="ALF-af-dje" id="Zrz-vD-7En"/>
                         <outlet property="targetSegmented" destination="p9t-xn-4vu" id="jBu-BQ-zCp"/>

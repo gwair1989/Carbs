@@ -11,31 +11,20 @@ class CalculateVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var indexSliderOut: UISlider!
-    
     @IBOutlet weak var backgroundGender: UIImageView!
-    
     @IBOutlet weak var indexLabel: UILabel!
-    
     @IBOutlet weak var infoLabel: UILabel!
-    
     @IBOutlet weak var heightTextField: UITextField!
-    
     @IBOutlet weak var weightTextField: UITextField!
-    
     @IBOutlet weak var ageTextField: UITextField!
-    
     @IBOutlet var genderButtonColelection: [UIButton]!
     
     
     var indexGender:Float = 0.0
     var bmrBrain = BmrBrain()
     var isGender = false
-    
-    
-    
+
     //        BMR – базовый уровень метаболизма (basal metabolic rate)
-   
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,17 +39,14 @@ class CalculateVC: UIViewController, UITextFieldDelegate {
     @IBAction func indexSlider(_ sender: UISlider) {
        let value = String(format: "%.2f", sender.value)
         indexLabel.text = value
-        
         if sender.value > 1{
             setUI()
         }
-        
     }
     
     
     @IBAction func genderButton(_ sender: UIButton) {
         
-       
         if sender.tag == 0 && sender.backgroundColor == .white{
             indexGender = 5
             sender.backgroundColor = .brown
@@ -72,7 +58,6 @@ class CalculateVC: UIViewController, UITextFieldDelegate {
         } else if sender.tag == 0 && sender.backgroundColor == .brown{
             sender.backgroundColor = .white
             genderButtonColelection[1].isEnabled = true
-            
         }
         
         
@@ -88,7 +73,6 @@ class CalculateVC: UIViewController, UITextFieldDelegate {
             sender.backgroundColor = .white
             genderButtonColelection[0].isEnabled = true
         }
-       
     }
     
     @IBAction func calculateButton(_ sender: UIButton) {
@@ -100,10 +84,6 @@ class CalculateVC: UIViewController, UITextFieldDelegate {
          
        bmrBrain.getBMR(weight: weight, height: height, age: age, indexGender: indexGender, index: index)
         enterData()
-        
-        
-        
-//        BMR – базовый уровень метаболизма (basal metabolic rate)
     }
     
     
@@ -115,32 +95,17 @@ class CalculateVC: UIViewController, UITextFieldDelegate {
             resultVC.carbs = bmrBrain.sendCarbs()
             resultVC.fats = bmrBrain.sendFats()
             resultVC.proteine = bmrBrain.sendProtein()
-            
-            
-            
-            
-            print(isGender)
+
             if isGender {
                 resultVC.isGender = isGender
-                
             }
-            
-            
         }
     }
-    
-    
- 
-    
     
     
     func setUI(){
         infoLabel.text = "Как определить коэффициент активности:\n1,2 –  минимальная активность \n 1,4 – небольшая активность \n 1,46 – средняя активность \n 1,55 – активность выше среднего \n 1,64 – повышенная активность \n 1,72 – высокая активность \n 1,9 – очень высокая активность"
     }
-    
-    
-    
-    
     
     
     func enterData (){
@@ -158,7 +123,6 @@ class CalculateVC: UIViewController, UITextFieldDelegate {
                 setUI()
             performSegue(withIdentifier: "toRecalculateVC", sender: self)
         }
-        
     }
     
 
@@ -168,6 +132,5 @@ class CalculateVC: UIViewController, UITextFieldDelegate {
         ageTextField.endEditing(true)
         return true
     }
-    
 }
 
